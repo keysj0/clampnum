@@ -10,3 +10,9 @@ def clamp(value: float, low: float, high: float) -> float:
     if value > high:
         return high
     return value
+
+
+def within(value: float, low: float, high: float) -> bool:
+    if low > high:
+        raise ValueError("下界不能大于上界")
+    return low <= value <= high
