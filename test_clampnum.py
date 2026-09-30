@@ -1,6 +1,6 @@
 import unittest
 
-from clampnum import clamp
+from clampnum import clamp, within
 
 
 class ClampnumTest(unittest.TestCase):
@@ -8,6 +8,8 @@ class ClampnumTest(unittest.TestCase):
         self.assertEqual(clamp(5, 0, 10), 5)
         self.assertEqual(clamp(-1, 0, 10), 0)
         self.assertEqual(clamp(11, 0, 10), 10)
+        self.assertTrue(within(5, 0, 10))
+        self.assertFalse(within(11, 0, 10))
         with self.assertRaises(ValueError):
             clamp(1, 3, 2)
 
