@@ -1,6 +1,6 @@
 import unittest
 
-from clampnum import clamp, within
+from clampnum import clamp, overflow, within
 
 
 class ClampnumTest(unittest.TestCase):
@@ -10,6 +10,8 @@ class ClampnumTest(unittest.TestCase):
         self.assertEqual(clamp(11, 0, 10), 10)
         self.assertTrue(within(5, 0, 10))
         self.assertFalse(within(11, 0, 10))
+        self.assertEqual(overflow(11, 0, 10), 1)
+        self.assertEqual(overflow(5, 0, 10), 0)
         with self.assertRaises(ValueError):
             clamp(1, 3, 2)
 
