@@ -12,6 +12,16 @@ def clamp(value: float, low: float, high: float) -> float:
     return value
 
 
+def overflow(value: float, low: float, high: float) -> float:
+    if low > high:
+        raise ValueError("下界不能大于上界")
+    if value < low:
+        return low - value
+    if value > high:
+        return value - high
+    return 0.0
+
+
 def within(value: float, low: float, high: float) -> bool:
     if low > high:
         raise ValueError("下界不能大于上界")
