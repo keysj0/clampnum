@@ -26,3 +26,7 @@ def within(value: float, low: float, high: float) -> bool:
     if low > high:
         raise ValueError("下界不能大于上界")
     return low <= value <= high
+
+
+def clamp_all(values: list[float], low: float, high: float) -> list[float]:
+    return [clamp(value, low, high) for value in values]
