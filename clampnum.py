@@ -30,3 +30,7 @@ def within(value: float, low: float, high: float) -> bool:
 
 def clamp_all(values: list[float], low: float, high: float) -> list[float]:
     return [clamp(value, low, high) for value in values]
+
+
+def outside_count(values: list[float], low: float, high: float) -> int:
+    return sum(1 for value in values if not within(value, low, high))
