@@ -34,3 +34,9 @@ def clamp_all(values: list[float], low: float, high: float) -> list[float]:
 
 def outside_count(values: list[float], low: float, high: float) -> int:
     return sum(1 for value in values if not within(value, low, high))
+
+
+def spread(low: float, high: float) -> float:
+    if low > high:
+        raise ValueError("下界不能大于上界")
+    return high - low
