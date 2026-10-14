@@ -44,3 +44,9 @@ def spread(low: float, high: float) -> float:
 
 def inside_count(values: list[float], low: float, high: float) -> int:
     return sum(1 for value in values if within(value, low, high))
+
+
+def on_edge(value: float, low: float, high: float) -> bool:
+    if low > high:
+        raise ValueError("下界不能大于上界")
+    return value == low or value == high
