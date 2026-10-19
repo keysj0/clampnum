@@ -50,3 +50,9 @@ def on_edge(value: float, low: float, high: float) -> bool:
     if low > high:
         raise ValueError("下界不能大于上界")
     return value == low or value == high
+
+
+def center(low: float, high: float) -> float:
+    if low > high:
+        raise ValueError("下界不能大于上界")
+    return (low + high) / 2
