@@ -1,6 +1,6 @@
 import unittest
 
-from clampnum import clamp, clamp_all, inside_count, on_edge, outside_count, overflow, spread, within
+from clampnum import center, clamp, clamp_all, inside_count, on_edge, outside_count, overflow, spread, within
 
 
 class ClampnumTest(unittest.TestCase):
@@ -20,6 +20,7 @@ class ClampnumTest(unittest.TestCase):
         self.assertEqual(inside_count([-1, 5, 11], 0, 10), 1)
         self.assertTrue(on_edge(0, 0, 10))
         self.assertFalse(on_edge(5, 0, 10))
+        self.assertEqual(center(0, 10), 5)
 
 
 if __name__ == "__main__":
