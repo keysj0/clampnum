@@ -62,3 +62,9 @@ def past_high(value: float, low: float, high: float) -> bool:
     if low > high:
         raise ValueError("下界不能大于上界")
     return value > high
+
+
+def past_low(value: float, low: float, high: float) -> bool:
+    if low > high:
+        raise ValueError("下界不能大于上界")
+    return value < low
