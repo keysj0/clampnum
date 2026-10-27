@@ -68,3 +68,7 @@ def past_low(value: float, low: float, high: float) -> bool:
     if low > high:
         raise ValueError("下界不能大于上界")
     return value < low
+
+
+def under_center(value: float, low: float, high: float) -> bool:
+    return value < center(low, high)
