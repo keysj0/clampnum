@@ -72,3 +72,6 @@ def past_low(value: float, low: float, high: float) -> bool:
 
 def under_center(value: float, low: float, high: float) -> bool:
     return value < center(low, high)
+
+def over_center(value: float, low: float, high: float) -> bool:
+    return value > center(low, high)
