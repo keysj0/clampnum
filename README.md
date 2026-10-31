@@ -3,7 +3,7 @@
 Keep a number inside an inclusive range.
 
 ```python
-from clampnum import clamp, within, overflow, clamp_all, outside_count, spread, inside_count, on_edge, center, past_high, past_low, under_center, over_center
+from clampnum import clamp, within, overflow, clamp_all, outside_count, spread, inside_count, on_edge, center, past_high, past_low, under_center, over_center, at_center
 
 clamp(11, 0, 10)  # 10
 within(5, 0, 10)  # True
