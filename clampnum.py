@@ -75,3 +75,6 @@ def under_center(value: float, low: float, high: float) -> bool:
 
 def over_center(value: float, low: float, high: float) -> bool:
     return value > center(low, high)
+
+def at_center(value: float, low: float, high: float) -> bool:
+    return value == center(low, high)
